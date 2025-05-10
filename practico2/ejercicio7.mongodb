@@ -1,0 +1,33 @@
+db.cursos.insertMany([
+    {
+        id: 1,
+        nombre: 'Matemáticas'
+    },
+    {
+        id: 2,
+        nombre: 'discord'
+    },
+    {
+        id: 3,
+        nombre: 'programación'
+    },
+    {
+        id: 4,
+        nombre: 'historia'
+    }
+])
+
+db.alumnos.insertMany([
+    {
+        nombre: 'Luis',
+        id_cursos: [1, 4]
+    },
+    {
+        nombre: 'Ana',
+        id_cursos: [1,2]
+    },
+    {
+        nombre: 'Juan',
+        id_cursos: [2,3]
+    }
+])

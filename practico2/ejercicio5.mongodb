@@ -1,0 +1,22 @@
+use ('ventas')
+db.ventas.insertMany([
+    { "producto": "lápiz", "cantidad": 10, "precio_unitario": 2 },
+    { "producto": "cuaderno", "cantidad": 5, "precio_unitario": 20 },
+    { "producto": "cartuchera", "cantidad": 15, "precio_unitario": 2 }
+])
+
+db.ventas.aggregate([
+    {
+    $project: {
+        producto: 1,
+        total: { $multiply: ["$cantidad", "$precio_unitario"] }
+    }
+    },
+    {
+    $group: {
+        _id: "$producto",
+        total_ventas: { $sum: "$total" }
+    }
+    }
+])
+

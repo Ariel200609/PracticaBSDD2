@@ -1,0 +1,16 @@
+use('empresa')
+
+db.empleados.insertMany([
+    {
+        nombre: 'Luis',
+        direccion: { calle: 'av. Libertador', ciudad: 'Bahía Blanca', codigo_postal: 8000 }
+    },
+    {
+        nombre: 'Ana',
+        direccion: { calle: 'av. Libertador', ciudad: 'Bahía Blanca', codigo_postal: 8000 }
+    },
+    {
+        nombre: 'Juan',
+        direccion: { calle: 'av. Libertador', ciudad: 'Bahía Blanca', codigo_postal: 8000 }
+    }
+])

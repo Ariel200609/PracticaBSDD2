@@ -1,0 +1,11 @@
+use ('empresa')
+db.createUser({
+    user: "usuario_rw",
+    pwd: "contraseña123",
+    roles: [ { role: "readWrite", db: "empresa" } ]
+})
+
+//HACER UN BACKUP DE LA BASE DE DATOS EMPRESA: 
+//mongodump --db empresa --out /ruta/al/backup
+//RESTORE DE LA BASE DE DATOS EMPRESA:
+//mongorestore --db empresa /ruta/al/backup/empresa

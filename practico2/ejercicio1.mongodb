@@ -26,5 +26,5 @@ db.empleados.updateOne(
 db.empleados.remove(
     { puesto: 'Pasante' }
 )
-
+db.empleados.find()
 

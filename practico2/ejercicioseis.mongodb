@@ -1,0 +1,6 @@
+db.clientes.createIndex(
+    {
+    apellido: 1, 
+    nombre: 1 
+    }
+)
