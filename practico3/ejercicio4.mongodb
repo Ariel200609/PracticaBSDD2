@@ -1,0 +1,19 @@
+db.productos.aggregate([
+    //Paso 1: desestrocturacion del arreglo de puntuaciones
+    {
+        $unwind: "$valoraciones" 
+    },
+    //Paso 2 :agrupar por puntuacion
+    {
+        $group: {
+            _id: "$valoraciones.puntuacion",
+            cantidad_valoraciones: { $sum: 1 },
+            productos: { $push: "$nombre" }
+        }
+    },
+    {
+        $sort: {
+            _id: 1
+        }
+    }
+])

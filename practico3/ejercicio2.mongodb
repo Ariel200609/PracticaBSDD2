@@ -1,0 +1,13 @@
+db.productos.aggregate([
+    {
+        $group: {
+            _id: "$categoria",
+            precio_promedio:{$avg: "$precio"},
+            precio_maximo:{$max: "$precio"},
+            precio_minimo: {$min: "$precio"}
+            },
+        },
+        {
+            $sort: { _id: 1}
+        }
+]);

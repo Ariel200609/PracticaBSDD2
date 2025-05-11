@@ -1,0 +1,8 @@
+db.TiendaOnline.aggregate([
+{
+    $match : {
+        categoria: "electronica",
+        precio: { $gt: 500 }
+    }
+}
+])
