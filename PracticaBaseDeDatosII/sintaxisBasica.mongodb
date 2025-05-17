@@ -1,0 +1,26 @@
+// Ejemplo de uso de MongoDB sintaxis básica de MongoDB
+
+use ("biblioteca")
+
+db.libros.insertMany([
+    { titulo: "MongoDB Intro", autor: "Laura", tags: ["NoSQL", "MongoDB"] },
+    { titulo: "Aprendiendo JavaScript", autor: "Carlos", tags: ["JavaScript", "Programación"] },
+    { titulo: "Base de datos modernas", autor: "Ana", tags: ["Bases de datos", "MongoDB"] }
+])
+
+db.usuarios.insertMany([
+    { nombre: "Ana", edad: 25 },
+    { nombre: "Luis", edad: 32 },
+    { nombre: "María", edad: 29 }
+])
+
+db.usuarios.find({ edad: { $gt: 30 } })
+
+db.usuarios.deleteOne({ nombre: "Luis" })
+
+db.usuarios.find({
+    $and: [
+        { edad: { $gt: 20 } },
+        { edad: { $lt: 27 } }
+    ]
+})

@@ -1,0 +1,46 @@
+//Buscar todos los usuarios
+db.usuarios.find()
+
+//buscar usuarios conn edad mayor o igual a 30
+db.usuarios.find({
+    edad: { $gte:30}
+})
+
+//buscar usuarios con Edad distinta a 25
+db.usuarios.find({
+    edad: { $ne:25}
+})
+
+//Buscar usuarios entre 25 y 30 
+
+db.usuarios.find({
+    edad : { $gte:25, $lte:30}
+})
+
+//buscar usuarios con nombre LUIS o que tengan edad menor a 28
+db.usuarios.find({
+    $or: [
+        { nombre: "Luis" },
+        { edad: { $lt: 28 } }
+    ]
+})
+
+//Buscar Libros que contengan la palabra "MongoDB" en el titulo
+db.libros.find({
+    titulo: { tags : "MongoDB" }
+})
+
+//Buscar libros que tengan ambos tags: "NoSQL" y "MongoDB"
+db.libros.find({
+    tags: { $all: ["NoSQL", "MongoDB"] }
+})
+
+//Buscar personas que vivan en la ciudad "Bahia Blanca"
+db.personas.find({
+    "direccion.ciudad": "Bahia Blanca"
+})
+
+//Buscar personas con curso llamado "Matematicas"
+db.personas.find ({
+    "cursos.nombre": "Matematicas"
+})

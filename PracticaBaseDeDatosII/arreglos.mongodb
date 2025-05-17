@@ -1,0 +1,10 @@
+db.personas.insertOne({
+    nombre: "Tomioka",
+    cursos: [
+        {nombre: "Matematicas", aula: 203},
+        {nombre: "Arquitectura", aula: 203},
+        {nombre: "Programacion", aula: 203},
+        {nombre: "Organizacion Empresarial", aula: 203},
+    ]
+})
+

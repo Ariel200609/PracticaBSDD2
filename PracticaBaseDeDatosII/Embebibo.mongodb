@@ -1,0 +1,11 @@
+// Ejemplo de Documento embebido
+db.personas.insertMany([
+    {
+        nombre: "carlos",
+        direccion: { ciudad: "Bahia Blanca", calle: "San Martin", numero: 123 },
+    },
+    {
+        nombre: "maria",
+        direccion: { ciudad: "Bahia Blanca", calle: "Av.Colon", numero: 321 }
+    }
+])

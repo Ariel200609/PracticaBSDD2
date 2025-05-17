@@ -1,4 +1,4 @@
-db.ventas.aggregate([
+ db.ventas.aggregate([
     {
         $lookup: {
             from: "productos",

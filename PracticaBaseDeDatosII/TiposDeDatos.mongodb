@@ -1,0 +1,11 @@
+db.tipos.insertOne({
+    texto: "Hola mundo",
+    entero: 42,
+    decimal: 3.14,
+    booleano: true,
+    fecha: ISODate("2025-01-01"),
+    arreglo: [1, 2, 3],
+    objeto: { a: 1, b: 2 },
+    objectId: ObjectId(),
+    binario: new BinData(0, "U29tZUJhc2U2NERhdGE=")
+})

@@ -1,0 +1,15 @@
+db.usuarios.insertMany([
+    { nombre: "Ana", edad: 25 },
+    { nombre: "Luis", edad: 32 },
+    { nombre: "María", edad: 28 },
+    { nombre: "Carlos", edad: 40 },
+    { nombre: "Sofía", edad: 22 }
+])
+
+db.usuarios.find({
+        edad: { $gt: 30 }
+})
+
+db.usuarios.find({
+    edad: { $gte:20, $lte: 35 }
+})
