@@ -1,0 +1,22 @@
+db.libros.insertMany([
+    { titulo: "MongoDB Intro", autor: "Laura", tags: ["NoSQL", "MongoDB"] },
+    { titulo: "Aprendiendo JavaScript", autor: "Carlos", tags: ["JavaScript", "Programación"] },
+    { titulo: "Base de datos modernas", autor: "Ana", tags: ["Bases de datos", "MongoDB"] }
+])
+
+db.libros.find({
+    autor: "Laura"
+})
+
+//Libros que contengan el tag "Programación".
+db.libros.find({
+    tags: {$all : ["Programación"]}
+})
+
+//Libros que tengan al menos dos tags.
+db.libros.find({
+    tags :[
+        { $size: 2 }
+    ]
+})
+

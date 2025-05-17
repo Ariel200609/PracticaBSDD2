@@ -1,0 +1,21 @@
+db.personas.insertMany([
+    { nombre: "Javier", edad: 28, direccion: { ciudad: "Buenos Aires", pais: "Argentina" } },
+    { nombre: "Elena", edad: 35, direccion: { ciudad: "Madrid", pais: "España" } },
+    { nombre: "Luis", edad: 22, direccion: { ciudad: "Barcelona", pais: "España" } },
+    { nombre: "Sofia", edad: 40, direccion: { ciudad: "Santiago", pais: "Chile" } },
+    { nombre: "Carlos", edad: 30, direccion: { ciudad: "Madrid", pais: "España" } }
+]);
+
+// Buscar personas que vivan en "Madrid"
+db.personas.find({
+    "direccion.ciudad": "Madrid"
+});
+
+db.personas.find({
+    $and: [
+        { "direccion.pais": "España" },
+        { "direccion.ciudad": "Madrid" }
+    ]
+});
+
+

@@ -1,0 +1,21 @@
+db.personas.insertMany([
+    { nombre: "Javier", cursos: [{ nombre: "MongoDB", nota: 8 }, { nombre: "NodeJS", nota: 7 }] },
+    { nombre: "Elena", cursos: [{ nombre: "React", nota: 9 }] },
+    { nombre: "Martin", cursos: [{ nombre: "MongoDB", nota: 6 }, { nombre: "Python", nota: 7 }, { nombre: "SQL", nota: 8 }] }
+]);
+
+// Buscar personas que tengan un curso llamado "MongoDB"
+db.personas.find({
+    "cursos.nombre": "MongoDB"
+});
+// Buscar personas que tengan un curso con nota mayor a 8
+db.personas.find({
+    "cursos.nota": { $gt: 7 }
+});
+
+db.personas.find({
+    "cursos":{
+        $size: 2
+    }
+})
+

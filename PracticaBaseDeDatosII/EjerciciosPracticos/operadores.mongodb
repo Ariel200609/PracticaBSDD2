@@ -1,0 +1,13 @@
+db.personas.find({
+    $and: [
+        {edad : { $gt: 25 }},
+        {"cursos.nombre": "SQL"}
+    ]
+})
+
+db.personas.find({
+    $or: [
+    { nombre: { $not: { $eq: "Luis" } } },
+    { edad: { $lt: 30 } }
+    ]
+})

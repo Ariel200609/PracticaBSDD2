@@ -13,3 +13,7 @@ db.usuarios.find({
 db.usuarios.find({
     edad: { $gte:20, $lte: 35 }
 })
+
+db.usuarios.find({
+    nombre: /^M/ 
+})
